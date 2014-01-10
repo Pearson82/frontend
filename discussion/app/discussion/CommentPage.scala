@@ -15,6 +15,7 @@ case class CommentPage(
                         currentPage: Int,
                         pages: Int,
                         orderBy: String,
+                        isClosedForComments: Boolean,
                         isClosedForRecommendation: Boolean,
                         switches: Seq[Switch]
                         ) extends Page(id = id, section = "Global", webTitle = title, analyticsName = s"GFE:Article:Comment discussion page $currentPage") {

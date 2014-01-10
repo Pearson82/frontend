@@ -25,7 +25,8 @@ define([
     'common/bootstraps/video',
     'common/bootstraps/gallery',
     'common/bootstraps/interactive',
-    'common/bootstraps/identity'
+    'common/bootstraps/identity',
+    'common/bootstraps/discussion'
 ], function (
     common,
     qwery,
@@ -51,7 +52,8 @@ define([
     Video,
     Gallery,
     Interactive,
-    Identity
+    Identity,
+    Discussion
 ) {
 
     var modules = {
@@ -133,6 +135,11 @@ define([
                 r.get('/football/:action/:year/:month/:day', function(req) {      Football.init(req, config, context); });
                 r.get('/football/:tag/:action', function(req) {                   Football.init(req, config, context); });
                 r.get('/football/:tag/:action/:year/:month/:day', function(req) { Football.init(req, config, context); });
+
+                // Discussion
+                r.get('/discussion/p/:id', function(req) {
+                    Discussion.init(config, context);
+                });
 
                 if(config.page.contentType === 'Article') {
                     Article.init(config, context);

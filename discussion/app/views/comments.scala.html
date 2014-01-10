@@ -14,11 +14,30 @@
                 <div class="article__main-column">
                     <div class="article__meta-container"></div>
 
-                    <h2 class="page-sub-header tone-colour">Comments</h2>
-                    @fragments.commentsBody(page)
+
+                    <div id="comments" class="discussion discussion--@if(page.isClosedForComments){closed} else {open}"
+                        data-discussion-key="@page.id"
+                        data-discussion-closed="@page.isClosedForComments">
+
+                        <div class="discussion__comments__container">
+                            <h2 class="page-sub-header discussion__heading">All Comments</h2>
+
+                            <div class="d-bar d-bar--signin">Open for comments.
+                                <a href="">Sign in</a>
+                                or
+                                <a href="">create your Guardian account</a>
+                                to join the discussion.
+                            </div>
+                            <div class="d-bar d-bar--closed">This discussion is closed for comments.</div>
+
+                            <div class="discussion__comment-box discussion__comment-box--top"></div>
+                            <div class="discussion__comments">@fragments.commentsBody(page)</div>
+                        </div>
+                    </div>
+
+                    <div class="article__secondary-column" aria-hidden="true"></div>
                 </div>
-                <div class="article__secondary-column" aria-hidden="true"></div>
             </div>
-        </div>
+        </main>
     </div>
 }

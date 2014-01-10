@@ -29,6 +29,7 @@ define([
  * * Move recommending into this, it has no need for it's own module.
  * * Get the selectors up to date with BEM
  * * Move over to $ instead of qwery & bonzo
+ * * Make discussionId discoverable through data attribute
  * @constructor
  * @extends Component
  * @param {Element=} context

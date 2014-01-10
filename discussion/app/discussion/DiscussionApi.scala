@@ -51,6 +51,7 @@ trait DiscussionApi extends Http with ExecutionContexts with Logging {
           currentPage = (json \ "currentPage").as[Int],
           pages = (json \ "pages").as[Int],
           orderBy = (json \ "orderBy").as[String],
+          isClosedForComments = (json \ "discussion" \ "isClosedForComments").as[Boolean],
           isClosedForRecommendation = (json \ "discussion" \ "isClosedForRecommendation").as[Boolean],
           switches = (json \ "switches").as[Seq[JsObject]] map { json => Switch(json) }
         )
