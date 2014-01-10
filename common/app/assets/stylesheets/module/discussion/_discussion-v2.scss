@@ -1,0 +1,14 @@
+.discussion--v2 {
+
+    .d-bar {
+        display: none;
+    }
+
+    &.discussion--closed {
+        .d-bar--closed {
+            display: block;
+        }
+    }
+
+
+}

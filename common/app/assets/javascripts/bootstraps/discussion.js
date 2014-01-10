@@ -8,9 +8,10 @@ function(
 ) {
 
 function init(config, context) {
-    var comments = new Comments(context, mediator, {
-        discussionId: document.getElementById('comments').getAttribute('data-discussion-key')
-    });
+    var commentsElem = document.getElementById('comments'),
+        comments = new Comments(context, mediator, {
+            discussionId: commentsElem.getAttribute('data-discussion-key')
+        });
 
     comments.attachTo(document.querySelector('.d-discussion'));
 }

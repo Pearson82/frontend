@@ -13,14 +13,12 @@
             <div class="article__columning-wrapper">
                 <div class="article__main-column">
                     <div class="article__meta-container"></div>
-
-
-                    <div id="comments" class="discussion discussion--@if(page.isClosedForComments){closed} else {open}"
+                    <div id="comments" class="discussion discussion--v2 discussion--@if(page.isClosedForComments){closed} else {open}"
                         data-discussion-key="@page.id"
                         data-discussion-closed="@page.isClosedForComments">
 
                         <div class="discussion__comments__container">
-                            <h2 class="page-sub-header discussion__heading">All Comments</h2>
+                            <h2 class="page-sub-header discussion__heading">Comments</h2>
 
                             <div class="d-bar d-bar--signin">Open for comments.
                                 <a href="">Sign in</a>
@@ -28,9 +26,10 @@
                                 <a href="">create your Guardian account</a>
                                 to join the discussion.
                             </div>
+
                             <div class="d-bar d-bar--closed">This discussion is closed for comments.</div>
 
-                            <div class="discussion__comment-box discussion__comment-box--top"></div>
+                            <div class="discussion__comment-box discussion__comment-box--top sign-in-required">@fragments.commentBox()</div>
                             <div class="discussion__comments">@fragments.commentsBody(page)</div>
                         </div>
                     </div>
